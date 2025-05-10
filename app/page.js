@@ -7,6 +7,7 @@ import Button from './components/Button';
 import Video from './components/Video';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Hello from './test/Hello';
 
 gsap.registerPlugin(ScrollTrigger);
 const Page = () => {
@@ -58,6 +59,18 @@ const Page = () => {
       }
     });
   }, []);
+  const [isMobile, setIsMobile] = useState(false);
+
+useEffect(() => {
+  const checkMobile = () => {
+    setIsMobile(window.innerWidth <= 768); // You can adjust the breakpoint
+  };
+
+  checkMobile(); // Initial check
+  window.addEventListener("resize", checkMobile); // Update on resize
+
+  return () => window.removeEventListener("resize", checkMobile);
+}, []);
   return (
     <div className="bg-[#f6f9fc] w-full px-0 md:px-10 lg:px-0">
       <div className="lg:w-[860px] md:w-full sm:w-full mx-3 md:mx-auto  border border-gray-200 rounded-lg">
@@ -76,8 +89,13 @@ const Page = () => {
 
                   Use Stripe to handle all of your payments-related needs, manage revenue operations, and launch (or invent) new business models.
                 </p>
+               {isMobile && 
+               <div className='my-10 flex justify-center'>
+                <Hello />
+               </div>
+               } 
               </div>
-              <video
+              {/* <video
                 ref={(el) => (videoRefs.current[0] = el)}
                 src="/ani9.mp4"
                 autoPlay
@@ -85,7 +103,8 @@ const Page = () => {
                 muted
                 playsInline
                 className="h-80 lg:h-96 sm:block my-16  lg:my-0 md:hidden object-cover rounded-xl opacity-0"
-              />
+              /> */}
+
             </section>
 
             {/* Section 2 */}
@@ -249,13 +268,23 @@ const Page = () => {
           {/* Sticky Video Panel */}
           <div className="w-full md:block sm:hidden md:w-1/2 sticky md:top-0 lg:top-0 h-screen hidden md:flex items-center justify-center ">
             <AnimatePresence mode="wait">
-              {videoSources[activeIndex].endsWith('.gif') ? (
+              {activeIndex === 0 ? (
+                <motion.div
+                  key="0"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="w-full h-full flex justify-center items-center"
+                >
+                  <Hello />
+                </motion.div>
+              ) : videoSources[activeIndex].endsWith('.gif') ? (
                 <motion.img
                   key={activeIndex}
                   src={videoSources[activeIndex]}
                   alt="GIF"
-                  className="w-full max-w-md object-contain sm:hidden md:block  aspect-video rounded-xl"
-
+                  className="w-full max-w-md object-contain sm:hidden md:block aspect-video rounded-xl"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
@@ -269,7 +298,7 @@ const Page = () => {
                   loop
                   muted
                   playsInline
-                  className="h-80 md:h-96 object-cover  rounded-xl"
+                  className="h-80 md:h-96 object-cover rounded-xl"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
@@ -277,6 +306,7 @@ const Page = () => {
                 />
               )}
             </AnimatePresence>
+
           </div>
         </div>
       </div>
