@@ -59,13 +59,13 @@ const Page = () => {
     });
   }, []);
   return (
-    <div className="bg-[#f6f9fc] w-full">
-      <div className="lg:w-[860px] sm:w-full mx-3 md:mx-auto  border border-gray-200 rounded-lg">
-        <div className="flex flex-col lg:flex-row">
+    <div className="bg-[#f6f9fc] w-full px-0 md:px-10 lg:px-0">
+      <div className="lg:w-[860px] md:w-full sm:w-full mx-3 md:mx-auto  border border-gray-200 rounded-lg">
+        <div className="flex flex-col md:flex-row">
           {/* Text Sections */}
-          <div className="w-full lg:w-1/2 z-20">
+          <div className="w-full md:w-1/2 z-20 ">
             {/* Section 1 */}
-            <section className="lg:h-screen   flex items-center flex-wrap  justify-center px-3   ">
+            <section className="md:h-[100vh] lg:h-screen   flex items-center flex-wrap  justify-center px-3   ">
               <div className="max-w-2xl pt-10  md:pt-0">
                 <h1 className="text-md font-bold text-[#3b61d1]">Modular solutions</h1>
                 <p className="mt-4 text-4xl mb-10 font-bold" >
@@ -84,12 +84,12 @@ const Page = () => {
                 loop
                 muted
                 playsInline
-                className="h-80 lg:h-96 sm:block my-16  lg:my-0 lg:hidden object-cover rounded-xl opacity-0"
+                className="h-80 lg:h-96 sm:block my-16  lg:my-0 md:hidden object-cover rounded-xl opacity-0"
               />
             </section>
 
             {/* Section 2 */}
-            <section className="lg:h-screen   flex items-center flex-wrap justify-center px-3">
+            <section className="md:h-[100vh] lg:h-screen   flex items-center flex-wrap justify-center px-3">
 
               <div className="max-w-2xl">
                 <div className="flex items-center gap-2">
@@ -125,12 +125,12 @@ const Page = () => {
                 loop
                 muted
                 playsInline
-                className="h-80 lg:h-96 sm:block lg:hidden  my-16  lg:my-0  object-cover rounded-xl opacity-0"
+                className="h-80 lg:h-96 sm:block md:hidden  my-16  lg:my-0  object-cover rounded-xl opacity-0"
               />
             </section>
 
             {/* Section 3 */}
-            <section className="lg:h-screen   flex items-center flex-wrap justify-center px-3">
+            <section className="md:h-[100vh] lg:h-screen   flex items-center flex-wrap justify-center px-3">
 
               <div className="max-w-2xl">
                 <div className='flex items-center gap-4'>
@@ -169,14 +169,14 @@ const Page = () => {
                 loop
                 muted
                 playsInline
-                className="h-80 lg:h-96 sm:block   my-16  lg:my-0  lg:hidden object-cover rounded-xl opacity-0"
+                className="h-80 lg:h-96 sm:block   my-16  lg:my-0  md:hidden object-cover rounded-xl opacity-0"
               />
             </section>
 
 
 
             {/* Section 4 */}
-            <section className="lg:h-screen  sm:mb-10 flex items-center flex-wrap justify-center px-3">
+            <section className="md:h-[100vh] lg:h-screen  sm:mb-10 flex items-center flex-wrap justify-center px-3">
 
               <div className="max-w-2xl">
                 <div className='flex items-center gap-2'>
@@ -195,20 +195,20 @@ const Page = () => {
                 <p className='text-xs mt-1  text-gray-800'><span className="text-[#3b61d1] font-bold">Instant Payouts</span> for fast payments to users</p>
                 <p className='text-xs mt-1  text-gray-800'><span className="text-[#3b61d1] font-bold">Payment Elements </span>  for customisable UIs</p>
               </div>
-                <video
+              <video
                 ref={(el) => (videoRefs.current[3] = el)}
                 src="/ani9.mp4"
                 autoPlay
                 loop
                 muted
                 playsInline
-                className="h-80 lg:h-96 sm:block   my-16  lg:my-0  lg:hidden object-cover rounded-xl opacity-0"
+                className="h-80 lg:h-96 sm:block   my-16  lg:my-0  md:hidden object-cover rounded-xl opacity-0"
               />
             </section>
-          
+
 
             {/* Section 5 */}
-            <section className="lg:h-screen h-[125vh]  flex items-center flex-wrap justify-center px-3">
+            <section className="md:h-[100vh] lg:h-screen h-[125vh]  flex items-center flex-wrap justify-center px-3">
 
               <div className="max-w-2xl">
                 <div className='flex items-center gap-2'>
@@ -236,25 +236,25 @@ const Page = () => {
               </div>
               <video
                 ref={(el) => (videoRefs.current[4] = el)}
-                src="/ani9.mp4"
+                src="/ani2.mp4"
                 autoPlay
                 loop
                 muted
                 playsInline
-                className="h-80 lg:h-96  my-16  lg:my-0  sm:block lg:hidden object-cover rounded-xl opacity-0"
+                className="h-80 lg:h-96  my-16  lg:my-0  sm:block md:hidden object-cover rounded-xl opacity-0"
               />
             </section>
           </div>
 
           {/* Sticky Video Panel */}
-          <div className="w-ful lg:block sm:hidden l lg:w-1/2 sticky top-0 h-screen hidden lg:flex items-center justify-center ">
+          <div className="w-full md:block sm:hidden md:w-1/2 sticky md:top-0 lg:top-0 h-screen hidden md:flex items-center justify-center ">
             <AnimatePresence mode="wait">
               {videoSources[activeIndex].endsWith('.gif') ? (
                 <motion.img
                   key={activeIndex}
                   src={videoSources[activeIndex]}
                   alt="GIF"
-                  className="max-h-[90vh] w-full max-w-md object-contain sm:hidden lg:block  aspect-video rounded-xl"
+                  className="w-full max-w-md object-contain sm:hidden md:block  aspect-video rounded-xl"
 
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -269,7 +269,7 @@ const Page = () => {
                   loop
                   muted
                   playsInline
-                  className="h-80 lg:h-96 object-cover  rounded-xl"
+                  className="h-80 md:h-96 object-cover  rounded-xl"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
