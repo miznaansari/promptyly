@@ -7,7 +7,7 @@ const Button = ({ name }) => {
 
     return (
         <button
-            className={`mt-4 px-4 py-2 rounded-full text-sm text-white flex items-center transition duration-300 ease-in-out cursor-pointer
+            className={`mt-4 flex items-center px-3 p-1.5 rounded-full text-xs font-bold text-white flex items-center transition duration-300 ease-in-out cursor-pointer
         ${hovered ? 'bg-[#114f9a]' : 'bg-[#3b61d1]'}`}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
@@ -17,9 +17,9 @@ const Button = ({ name }) => {
                 className="text-lg"
                 transition={{ duration: 0.3 }} // Adjust the duration for the transition
                 initial={{ opacity: 1, x: 0 }}
-                animate={{ opacity: hovered ? 1 : 0.6, x: hovered ? 10 : 0 }} // Animate opacity and movement
+                animate={{ opacity: hovered ? 1 : 0.6, x: hovered ? 2 : 0 }} // Animate opacity and movement
             >
-                {hovered ? <FaArrowRight /> : <FaChevronRight />}
+                {hovered ? <FaArrowRight className='h-3 w-3' /> : <FaChevronRight className='h-3 w-3' />}
             </motion.span>
         </button>
     );
