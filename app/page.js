@@ -84,7 +84,7 @@ const Page = () => {
                 loop
                 muted
                 playsInline
-                className="h-80 lg:h-96 sm:block my-16  md:my-0 lg:hidden object-cover rounded-xl w-full opacity-0"
+                className="h-80 lg:h-96 sm:block my-16  lg:my-0 lg:hidden object-cover rounded-xl opacity-0"
               />
             </section>
 
@@ -125,7 +125,7 @@ const Page = () => {
                 loop
                 muted
                 playsInline
-                className="h-80 lg:h-96 sm:block lg:hidden  my-16  md:my-0  object-cover rounded-xl w-full opacity-0"
+                className="h-80 lg:h-96 sm:block lg:hidden  my-16  lg:my-0  object-cover rounded-xl opacity-0"
               />
             </section>
 
@@ -169,7 +169,7 @@ const Page = () => {
                 loop
                 muted
                 playsInline
-                className="h-80 lg:h-96 sm:block   my-16  md:my-0  lg:hidden object-cover rounded-xl w-full opacity-0"
+                className="h-80 lg:h-96 sm:block   my-16  lg:my-0  lg:hidden object-cover rounded-xl opacity-0"
               />
             </section>
 
@@ -195,16 +195,17 @@ const Page = () => {
                 <p className='text-xs mt-1  text-gray-800'><span className="text-[#3b61d1] font-bold">Instant Payouts</span> for fast payments to users</p>
                 <p className='text-xs mt-1  text-gray-800'><span className="text-[#3b61d1] font-bold">Payment Elements </span>  for customisable UIs</p>
               </div>
+                <video
+                ref={(el) => (videoRefs.current[3] = el)}
+                src="/ani9.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="h-80 lg:h-96 sm:block   my-16  lg:my-0  lg:hidden object-cover rounded-xl opacity-0"
+              />
             </section>
-            <video
-              ref={(el) => (videoRefs.current[3] = el)}
-              src="/ani9.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="h-80 lg:h-96 sm:block  my-16  md:my-0  lg:hidden object-cover rounded-xl w-full opacity-0"
-            />
+          
 
             {/* Section 5 */}
             <section className="lg:h-screen h-[125vh]  flex items-center flex-wrap justify-center px-3">
@@ -240,7 +241,7 @@ const Page = () => {
                 loop
                 muted
                 playsInline
-                className="h-80 lg:h-96  my-16  md:my-0  sm:block lg:hidden object-cover rounded-xl w-full opacity-0"
+                className="h-80 lg:h-96  my-16  lg:my-0  sm:block lg:hidden object-cover rounded-xl opacity-0"
               />
             </section>
           </div>
